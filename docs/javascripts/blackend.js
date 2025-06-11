@@ -45,7 +45,7 @@ scene.add(ambientLight);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.enableRotation=false;
+controls.autoRotate=false;
 controls.enableZoom=false;
 function onScroll() {
   const scrollY = window.scrollY;
