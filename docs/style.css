@@ -1,0 +1,511 @@
+  
+        *{
+            box-sizing: border-box;
+        }
+        @font-face {
+    font-family: 'font';
+    src: url('./fonts/SpaceQuest-Xj4o.ttf');
+}
+@font-face {
+    font-family: 'font2';
+    src: url('./fonts/SpaceCorner-axq0E.otf');
+}
+@font-face {
+    font-family: 'font3';
+    src: url('./fonts/SpaceMadness-2R6v.ttf');
+}
+@font-face {
+    font-family: 'font4';
+    src: url('./fonts/SpaceGame-ywxX2.ttf');
+}
+        body{
+            background-image: url('./images/dce45361-5910-4f5c-a1cc-b91ab0fa6243.jpeg');
+            overflow: auto;
+            margin:0
+        }
+        nav{
+            height: 100px;
+            display: flex;
+            align-items: center;
+            margin-top: 1%;
+        }
+        nav h1{
+            font-size: 85px;
+            text-transform: capitalize;
+            font-family: 'font';
+            color: rgb(255,255,255,0.4);
+            margin-left: 1%;
+        }
+       @media screen and (max-width:768px) {
+        nav h1{
+            font-size: 60px;
+        }
+       }
+       @media screen and (max-width:426px) {
+        nav h1{
+            font-size:30px
+        }
+        nav{
+            margin-top: 0%;
+            height: 50px;
+            margin-left: 2%;
+        }
+       }
+        .intro{
+            height: 500px;
+      
+            margin-top: 7%;
+        }
+        .left{
+            width: 30%;
+            
+        }
+        .intro .left h1{
+            font-family: 'font3';
+            color: #e5e4e2;
+            font-size: 60px;
+            text-align: center;
+            line-height: 60px;
+        }
+        .intro .right{
+            width: 60%;
+            margin-left: 2%;
+        }
+        .intro .right p{
+            font-family: 'font2';
+            font-size: 20px;
+            color: #EEEEFF;
+            line-height: 30px;
+        }
+        #three{
+           position: absolute;
+          width: 100%;
+          height: 200%;
+          top: 0;
+  left: 0;
+  overflow: hidden
+        }
+        .main{
+            position: relative;
+            width: 100%;
+        }
+        .earth{
+            width: 100%;
+            height: 700px;
+
+        }
+        @media(max-width:1024px){
+            .intro{
+                height: 600px;
+            }
+        }
+        @media(max-width:768px){
+            .intro{
+                height: 450px;
+            }
+               .intro .left h1{
+            font-size: 50px;
+            line-height: 60px;
+        }
+        .intro .right p{
+            font-size: 15px;
+            line-height: 30px;
+        }
+         .earth{
+            height: 600px;
+         }
+        }
+        @media(max-width:426px){
+            .left{
+                margin-left: 5%;
+            }
+            .intro .right{
+                margin-left: 6%;
+            }
+               .intro .left h1{
+            font-size: 40px;
+        }
+        .intro .right p{
+            font-size: 13px;
+            line-height: 20px;
+        }
+        }
+        @media(max-width:425px){
+            .intro{
+              height: 500px;
+            }
+        }
+        @media(max-width:320px){
+               .earth{
+            height: 650px;
+         }
+        }
+       .common{
+        height: 600px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       }
+       .sun{
+        height: 800px;
+       }
+       .blackhole{
+        height: 1300px;
+       }
+       .two h1{
+        font-size: 20px;
+       }
+       .topplayers{
+        height: 750px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+       }
+       .topplayers .cards{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        flex-wrap: wrap;
+       }
+       .cards .card{
+        width: 300px;
+        height: 200px;
+        border-radius: 10px;
+        transition:0.5s;
+       }
+       .cards .card img{
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        cursor: pointer;
+        border: 2px solid white;
+       }
+       .content{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+       }
+       .content h2{
+        text-transform: capitalize;
+        font-family: 'font2';
+        width: 20%;
+        text-align: center;
+        color:#EEEEFF
+       }
+       .card:hover{
+        transform: scale(1.1,1.1);
+       }
+       .heading{
+        height: 200px;
+        width:100%;
+        text-align: center;
+        text-transform: capitalize  ;
+        font-size: 30px;
+        font-family: 'font3';
+        color:  #e5e4e2;
+       }
+       .divcon{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        text-transform: capitalize;
+        font-size: 40px;
+        color:  #e5e4e2;
+        font-family: 'font3';
+       }
+
+       .everyone{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        height: 600px;
+        width: 100%;
+
+       }
+       .everyone .every{
+        height: 100%;
+        width: 25%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+       }
+       .every h1{
+        color:  #e5e4e2;
+       }
+       .every p{
+        font-size: 15px;
+            text-align: center;
+            color:#EEEEFF;
+            font-family: 'font2';
+            text-transform: lowercase;
+       }
+   .every button{
+    font-size: 20px;
+            padding: 2%;
+            background: transparent;
+            border:2px solid white;
+            border-radius: 20px;
+            color:white ;
+            /* width: 30%; */
+   }
+
+.everytwo{
+    height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        text-align: center;
+}
+.everytwo h1{
+    font-family: 'font3';
+    font-size: 20px;
+}
+.everyone1{
+    width: 50%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+.everyone1 h1{
+    font-family: 'font3';
+    font-size: 20px;
+}
+.leftdiv{
+    margin-left:2%;
+}
+.rightdiv{
+    margin-right: 2%;
+}
+@media(max-width:1024px){
+    .divcon{
+        font-size: 30px;
+    }
+    .heading{
+        height: 150px;
+    }
+    .topplayers{
+        height: 890px;
+    }
+}
+@media(max-width:768px){
+       .every p{
+        font-size: 13px;
+       }
+       .everytwo h1{
+    font-size: 15px;
+}
+.content{
+    display: none;
+}
+ .topplayers .cards{
+   margin-top: 5%;
+   height: 600px;
+       }
+        .divcon{
+        font-size: 25px;
+    }
+}
+@media(max-width:426px){
+    .everyone{
+      flex-direction: column;
+       } 
+        .everyone .every{
+            flex-direction: row;
+        width: 100%;
+       }
+         .every h1{
+            background-color: rgb(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+       }
+       .every p{
+     background-color: rgb(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+       }
+        .every button{
+  background-color: rgb(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+   }
+    .topplayers{
+        height: 1000px;
+        justify-content: space-between;
+       }
+        .heading{
+            font-size: 30px;
+    }
+     .topplayers .cards{
+   height: 700px;
+       }
+       .leftdiv{
+        margin-left: 3%;
+       }
+.rightdiv{
+ margin: 0;
+}
+
+}
+@media(max-width:425px){
+    .heading{
+font-size: 20px;
+    }
+    .sec{
+        font-size: 30px;
+    }
+     .topplayers{
+        height: 800px
+       }
+            .divcon{
+        font-size: 20px;
+    }
+    .everytwo h1{
+    font-size: 13px;
+}
+}
+@media(max-width:320px){
+    .topplayers{
+        height: 900px
+       }
+        .cards .card{
+        width: 280px;
+       }
+       .heading{
+        font-size: 15px;
+       }
+       .sec{
+        font-size: 30px;
+       }
+}
+.missioncontainer{
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.missioncontainer h1{
+    font-size: 70.5px;
+    text-transform: capitalize;
+    font-family: 'font3';
+    color:  #e5e4e2;
+}
+.missioncontainer .contentcon{
+    width: 80.3%;
+    height: 67%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.missioncontainer .contentcon .items{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.items h2{
+    font-family: 'font3';
+    font-size: 20px;
+}
+.items p{
+    font-family: "Mulish", serif;
+  font-optical-sizing: auto;
+  font-weight: 100px;
+  font-style: normal;
+  text-transform: capitalize;
+}
+.items img{
+    height: 100%;
+    width: 100%;
+}
+.items:nth-child(1){
+    background-color: #D4D4D2;
+}
+.items:nth-child(5){
+    background-color: #1A3A6B;
+}
+.items:nth-child(6){
+    background-color: #708090;
+}
+.items:nth-child(2){
+    background-color: #1C1C1C;
+}
+.items:nth-child(3){
+    background-color: #E25822;
+}
+.items:nth-child(7){
+    background-color: #B7410E;
+}
+.items:nth-child(8){
+    background-color: #C0C0C0;
+}
+.items:nth-child(4){
+    background-color: #101820;
+}
+.description{
+    font-size: 70px;
+    font-family: 'font4';
+}
+@media(max-width:1024px){
+    .missioncontainer .contentcon .items{
+        width: 200px;
+        height: 200px;
+    }
+    .missioncontainer .contentcon{
+    height: 45%;
+    }
+    .items h2{
+    font-size: 15px;
+}
+.items p{
+    font-size: 11px
+}
+.description{
+    font-size: 60px;
+}
+}
+@media(max-width:768px){
+    .missioncontainer{
+    height: 1300px;
+   }
+   
+    .description{
+    font-size: 40px;
+}
+}
+@media(max-width:426px){
+    .missioncontainer h1{
+    font-size: 50px;
+}
+
+#mg1,#mg2,#mg3,#mg4{
+    display: none;
+}
+.missioncontainer .contentcon{
+    width: 90%;
+    justify-content: center;
+}
+
+}
+@media(max-width:425px){
+       .missioncontainer h1{
+    font-size: 38px;
+} 
+    .description{
+    font-size: 30px;
+}
+}
+.end{
+    position: absolute;
+    display: none;
+    justify-content: baseline;
+    align-items: baseline;
+    color: red;
+    width: 100%;
+   border: 5px solid white;
+}

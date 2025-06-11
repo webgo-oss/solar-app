@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Login/Register</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            height: 100vh;
+        }
+        .boss{
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+        }
+        .container {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            transition: transform 0.6s ease-in-out;
+            z-index: 1;
+        }
+
+        .form-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .register-form {
+            transform: translateX(100%);
+        }
+
+        .container.active .login-form {
+            transform: translateX(-100%);
+        }
+
+        .container.active .register-form {
+            transform: translateX(0);
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            height: 100%;
+            text-align: center;
+        }
+
+        .form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .form input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .form button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #7597de;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .form button:hover {
+            background: #2b1055;
+        }
+
+        .toggle-btn {
+            margin-top: 10px;
+            color: #7597de;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            color: #fff;
+        }
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 5s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="boss">
+    <div class="stars" id="stars"></div>
+    <div class="container" id="form-container">
+        <!-- Login Form -->
+        <div class="form-container login-form">
+            <div class="form">
+                <h2>Login</h2>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button>Login</button>
+                <p class="toggle-btn" onclick="toggleForm()">Don't have an account? Register</p>
+            </div>
+        </div>
+        <div class="form-container register-form">
+            <div class="form">
+                <h2>Register</h2>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button>Register</button>
+                <p class="toggle-btn" onclick="toggleForm()">Already have an account? Login</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        function toggleForm() {
+            const container = document.getElementById('form-container');
+            container.classList.toggle('active');
+        }
+
+        function generateStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                star.style.width = `${Math.random() * 3 + 1}px`;
+                star.style.height = star.style.width;
+                starsContainer.appendChild(star);
+            }
+        }
+        generateStars();
+    </script>
+    <script type="module" src="./javascripts/ufo.js" defer></script>
+</body>
+</html>

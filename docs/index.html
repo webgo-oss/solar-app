@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Architects+Daughter&family=Archivo+Black&family=Bungee+Inline&family=Cedarville+Cursive&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Encode+Sans:wght@100..900&family=Fjalla+One&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kenia&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat+Underline:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nabla&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Parkinsans:wght@300..800&family=Playwrite+FR+Moderne:wght@100..400&family=Playwrite+HR+Lijeva:wght@100..400&family=Playwrite+ID+Guides&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Righteous&family=Rubik:ital,wght@0,300..900;1,300..900&family=Slabo+27px&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Varela+Round&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="three"></div>
+   <div class="main">
+    <nav>
+        <h1>galaxy explore</h1>
+    </nav>
+    <div class="intro" id="start">
+        <div class="left">
+      <h1>khown <br>them</h1>
+      </div>
+      <div class="right">
+        <p>Explore a cosmic wonderland where planets<br> like Earth, Mars,
+             and Jupiter reveal secrets of <br>the universe. From Mercury’s
+              heat to <br>Neptune’s icy winds, each planet has<br> its own story to tell.
+               <br>The adventure begins now!</p>
+      </div>
+    
+    </div>
+    <br>
+<div class="earth" id="earth"> 
+    <div class="everyone">
+        <div class="every">
+            <h1 class="description">earth</h1>
+            <div class="everyone1">
+            <h1>details</h1>
+            <p id="ani" ></p>
+          <button onclick="check(details,1)" >learn more</button>
+          </div>
+        </div>
+        <div class="every">
+            <div class="everytwo">
+            <h1>Length of Year</h1>
+            <p id="ani2">365.25 days (1 year)</p>
+            <h1>Temperature Range</h1>
+            <p id="ani3"> -89°C to 56°C (extremes), with an average of ~15°C.</p>
+            <h1>Atmosphere</h1>
+            <p id="ani4">Composed of 78% nitrogen, 21% oxygen, and trace gases.</p>
+            <h1>Gravity</h1>
+            <p id="ani5">9.8 m/s² at the surface.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="topplayers">
+   <div class="heading">
+    <h1>top players in the space</h1>
+   </div>
+    <div class="cards">
+        <div class="card">
+            <img src="./images/spacexlogo.jpeg" onclick="window.open('https://www.spacex.com/')">
+        </div>
+        <div class="card">
+            <img src="./images/isrologo.jpeg" onclick="window.open('https://www.isro.gov.in/')">
+        </div>
+        <div class="card">
+            <img src="./images/nasalogo.jpeg" onclick="window.open('https://www.nasa.gov/')">
+        </div>
+    </div>
+    <div class="content">
+        <h2>spaceX</h2>
+        <h2>isro</h2>
+        <h2>nasa</h2>
+    </div>
+</div>
+<br>
+<div class="divcon">
+    <div class="leftdiv">
+        <h1>here comes..</h1>
+    </div>
+    <div class="rightdiv">
+        <h1>..the sun</h1>
+    </div>
+</div>
+<br>
+<div class="sun common" id="sun" style="position: relative;">
+<div class="everyone">
+    <div class="every">
+        <div class="everyone1">
+        <h1>details</h1>
+        <p id="sun"> A giant ball of plasma, the Sun provides light and energy essential for life on Earth through nuclear fusion in its core.</p>
+        <div>
+            <button onclick="check(details,2)">learn more</button>
+        </div>
+        </div>
+    </div>
+    <div class="every not">
+        <div class="everytwo">
+        <h1>Temperature Range</h1>
+        <p>~5,500°C on the surface, ~15 million°C in the core.</p>
+        <h1>Atmosphere</h1>
+        <p>Layers include the photosphere, chromosphere, and corona, composed mainly of hydrogen and helium</p>
+        <h1>Gravity</h1>
+        <p>Surface gravity is about 274 m/s² (28 times Earth’s gravity).</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="missioncontainer">
+    <h1>top missions</h1>
+<div class="contentcon">
+    <div class="items">
+        <div style="width: 70%;">
+        <h2>ISRO: Chandrayaan-3 (2023)</h2>
+        <p>Successfully achieved a soft landing on the Moon's south pole, becoming the first to do so. Demonstrated India's technological prowess in space exploration.</p>
+        </div>
+    </div>
+    <div class="items" id="mg1">
+        <img src="./images/spacex.png">
+    </div>
+    <div class="items">
+        <div style="width: 70%;">
+            <h2>NASA: Perseverance Rover (2021)</h2>
+            <p>Landed on Mars to search for signs of ancient life and collect samples for future return missions. This advanced rover demonstrates cutting-edge scientific exploration.</p>
+        </div>
+    </div>
+    <div class="items" id="mg2">
+        <img src="./images/blueorgin.png">
+    </div>
+    <div class="items" id="mg3">
+        <img src="./images/is.png">
+    </div>
+    <div class="items">
+        <div style="width: 70%;">
+            <h2>SpaceX: Falcon Heavy Test Flight (2018)</h2>
+            <p> First successful launch of Falcon Heavy, the most powerful operational rocket, which carried Elon Musk's Tesla Roadster into space, showcasing reusable rocket technology.</p>
+        </div>
+    </div>
+    <div class="items" id="mg4">
+        <img src="./images/nasa.jpeg">
+    </div>
+    <div class="items">
+        <div style="width: 70%;">
+            <h2>Blue Origin: New Shepard Human Flight (2021)</h2>
+            <p>Blue Origin successfully launched its first crewed mission, carrying founder Jeff Bezos and three other passengers, including the oldest and youngest people ever to fly to space.</p>
+        </div>
+    </div>
+</div>
+</div>
+<br><br>
+<h1 class="heading sec">start of the solar system</h1>
+ <div class="merquery common" id="merquery">
+    <div class="everyone">
+        <div class="every">
+            <h1 class="description">merquery</h1>
+            <div class="everyone1">
+            <h1>details</h1>
+            <p id="sun"> Smallest planet, closest to the Sun, with a heavily cratered surface</p>
+            <div>
+                <button onclick="check(details,3)">learn more</button>
+            </div>
+            </div>
+        </div>
+        <div class="every not">
+            <div class="everytwo">
+            <h1>Length of Year</h1>
+            <p>88 Earth days</p>  
+            <h1>Temperature Range</h1>
+            <p>-173°C to 427°C.</p>
+            <h1>Atmosphere</h1>
+            <p>Thin, mostly oxygen, sodium, and hydrogen</p>
+            <h1>Gravity</h1>
+            <p> 3.7 m/s² (0.38 times Earth's gravity)</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+ <div class="mars common" id="mars">
+    <div class="everyone">
+        <div class="every">
+            <h1 class="description">mars</h1>
+            <div class="everyone1">
+            <h1>details</h1>
+            <p id="sun">Known as the "Red Planet," has the tallest volcano and deepest canyon in the solar system.</p>
+            <div>
+                <button onclick="check(details,4)">learn more</button>
+            </div>
+            </div>
+        </div>
+        <div class="every not">
+            <div class="everytwo">
+                <h1>Length of Year</h1>
+                <p>687 Earth days.</p>  
+                <h1>Temperature Range</h1>
+                <p>-125°C to 20°C.</p>
+                <h1>Atmosphere</h1>
+                <p>Thin, mostly carbon dioxide</p>
+                <h1>Gravity</h1>
+                <p>3.71 m/s² (0.38 times Earth's gravity).</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+<div class="Jupiter common" id="Jupiter">
+    <div class="everyone">
+        <div class="every">
+            <h1 class="description">Jupiter</h1>
+            <div class="everyone1">
+            <h1>details</h1>
+            <p id="sun">Largest planet, famous for its Great Red Spot, a massive storm.</p>
+            <div>
+                <button onclick="check(details,5)">learn more</button>
+            </div>
+            </div>
+        </div>
+        <div class="every not">
+            <div class="everytwo">
+                <h1>Length of Year</h1>
+                <p> 12 Earth years.</p>  
+                <h1>Temperature Range</h1>
+                <p>-145°C (upper atmosphere).</p>
+                <h1>Atmosphere</h1>
+                <p>Mostly hydrogen and helium.</p>
+                <h1>Gravity</h1>
+                <p>24.79 m/s² (2.5 times Earth's gravity).</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+<div class="saturn common" id="saturn">
+    <div class="everyone">
+        <div class="every">
+            <h1 class="description">saturn</h1>
+            <div class="everyone1">
+            <h1>details</h1>
+            <p id="sun">Known for its stunning ring system made of ice and rock.</p>
+            <div>
+                <button onclick="check(details,6)">learn more</button>
+            </div>
+            </div>
+        </div>
+        <div class="every not">
+            <div class="everytwo">
+                <h1>Length of Year</h1>
+                <p> 29.5 Earth years.</p>  
+                <h1>Temperature Range</h1>
+                <p>-178°C.</p>
+                <h1>Atmosphere</h1>
+                <p> Mostly hydrogen and helium.</p>
+                <h1>Gravity</h1>
+                <p>10.44 m/s² (1.07 times Earth's gravity).</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+ <div class="urans common" id="urans">
+    <div class="everyone">
+        <div class="every">
+            <h1 class="description">urans</h1>
+            <div class="everyone1">
+            <h1>details</h1>
+            <p id="sun"> Ice giant with a tilted axis, giving it extreme seasons.</p>
+            <div>
+                <button onclick="check(details,7)">learn more</button>
+            </div>
+            </div>
+        </div>
+        <div class="every not">
+            <div class="everytwo">
+                <h1>Length of Year</h1>
+                <p>84 Earth years</p>  
+                <h1>Temperature Range</h1>
+                <p> -224°C</p>
+                <h1>Atmosphere</h1>
+                <p>Mostly hydrogen, helium, and methane.</p>
+                <h1>Gravity</h1>
+                <p> 8.69 m/s² (0.89 times Earth's gravity).</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+<div class="venus common" id="venus">
+    <div class="everyone">
+        <div class="every">
+            <h1 class="description">venus</h1>
+            <div class="everyone1">
+            <h1>details</h1>
+            <p id="sun">Hottest planet due to a runaway greenhouse effect, often called Earth’s twin.</p>
+            <div>
+                <button onclick="check(details,8)">learn more</button>
+            </div>
+            </div>
+        </div>
+        <div class="every not">
+            <div class="everytwo">
+                <h1>Length of Year</h1>
+                <p> 225 Earth days.</p>  
+                <h1>Temperature Range</h1>
+                <p>~462°C (constant).</p>
+                <h1>Atmosphere</h1>
+                <p>Thick, mostly carbon dioxide with clouds of sulfuric acid.</p>
+                <h1>Gravity</h1>
+                <p>8.87 m/s² (0.9 times Earth's gravity).</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+<div class="pluto common" id="pluto">
+    <div class="everyone">
+        <div class="every">
+            <h1 class="description">pluto</h1>
+            <div class="everyone1">
+            <h1>details</h1>
+            <p id="sun">A dwarf planet in the Kuiper Belt, known for its icy surface and large moon, Charon.</p>
+            <div>
+                <button onclick="check(details,9)">learn more</button>
+            </div>
+            </div>
+        </div>
+        <div class="every not">
+            <div class="everytwo">
+                <h1>Length of Year</h1>
+                <p>248 Earth years.</p>  
+                <h1>Temperature Range</h1>
+                <p>-229°C to -223°C.</p>
+                <h1>Atmosphere</h1>
+                <p>Thin, mostly nitrogen, methane, and carbon monoxide (temporary and freezes as Pluto moves farther from the Sun).</p>
+                <h1>Gravity</h1>
+                <p>0.62 m/s² (0.06 times Earth's gravity)</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+<div class="naptune common" id="naptune">
+    <div class="everyone">
+        <div class="every">
+            <h1 class="description">naptune</h1>
+            <div class="everyone1">
+            <h1>details</h1>
+            <p id="sun">Blue ice giant known for its strong winds and faint rings.</p>
+            <div>
+                <button onclick="check(details,10)">learn more</button>
+            </div>
+            </div>
+        </div>
+        <div class="every not">
+            <div class="everytwo">
+                <h1>Length of Year</h1>
+                <p>165 Earth years.</p>  
+                <h1>Temperature Range</h1>
+                <p>-218°C.</p>
+                <h1>Atmosphere</h1>
+                <p>Mostly hydrogen, helium, and methane.</p>
+                <h1>Gravity</h1>
+                <p>11.15 m/s² (1.14 times Earth's gravity).</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+<div class="blackhole" id="blackhole">
+</div>
+    </div>
+    <script src="./javascripts/magic.js" defer></script>
+    <script type="module" src="./javascripts/main.js" defer></script>
+    <script src="./javascripts/magic2.js"  defer></script>
+    <script type="module" src="./javascripts/max.js" defer></script>
+    <script type="module" src="./javascripts/blackend.js" defer></script>
+
+</body>
+</html>

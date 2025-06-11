@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Layout</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'font2';
+      src: url('./fonts/SpaceCorner-axq0E.otf');
+    }
+    @font-face {
+      font-family: 'font3';
+      src: url('./fonts/SpaceMadness-2R6v.ttf');
+    }
+    @font-face {
+      font-family: 'font4';
+      src: url('./fonts/SpaceGame-ywxX2.ttf');
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      background-image: url('./images/dce45361-5910-4f5c-a1cc-b91ab0fa6243.jpeg');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Mulish', sans-serif;
+      min-height: 100vh;
+      color: #f0f0f0;
+    }
+
+    .leftcon {
+      width: 50%;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .leftcon::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(2px);
+      z-index: -1;
+    }
+
+    .rightcon {
+      width: 50%;
+      padding: 40px 30px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-left: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .rightcon h1 {
+      font-family: 'font4', sans-serif;
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 10px;
+    }
+
+    .subrightcon {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .subrightcon p {
+      font-size: 17px;
+      line-height: 1.8;
+      font-weight: 300;
+      color: #e0e0e0;
+    }
+
+    /* Scrollbar styling */
+    .subrightcon::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .subrightcon::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .leftcon, .rightcon {
+        width: 100%;
+        padding: 30px 20px;
+      }
+      .rightcon {
+        border-left: none;
+        border-top: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+      }
+      .rightcon h1 {
+        font-size: 32px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .rightcon h1 {
+        font-size: 26px;
+      }
+      .subrightcon p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="leftcon" id="tar">
+    <!-- 3D model goes here -->
+  </div>
+
+  <div class="rightcon">
+    <h1 id="heading">Heading</h1>
+    <div class="subrightcon">
+      <p id="details">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus volutpat ex eu nunc porttitor, in placerat tellus vulputate. Integer at convallis nunc. Pellentesque et feugiat orci, ac vehicula turpis. Curabitur sit amet justo ac sapien fermentum tristique. Curabitur scelerisque facilisis augue, et feugiat magna viverra ut. Integer a vehicula sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </div>
+  </div>
+
+  <script type="module" src="./javascripts/learn.js" defer></script>
+  <script src="./javascripts/magic2.js" defer></script>
+
+</body>
+</html>
