@@ -47,7 +47,7 @@ const ambientLight = new THREE.AmbientLight("#db904e", 5);
 scene.add(ambientLight);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
+controls.enableDamping = false;
 controls.enableRotate = false;
 controls.enableZoom = false;
 
