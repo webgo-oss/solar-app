@@ -50,6 +50,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = false;
 controls.enableRotate = false;
 controls.enableZoom = false;
+controls.enablePan = false;
 
 function onScroll() {
   const scrollY = window.scrollY;
