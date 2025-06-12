@@ -47,6 +47,10 @@ const ambientLight = new THREE.AmbientLight("#db904e", 5);
 scene.add(ambientLight);
 
 const controls = new OrbitControls(camera, renderer.domElement);
+controls.touches = {
+  ONE: THREE.TOUCH.NONE,
+  TWO: THREE.TOUCH.NONE
+};
 controls.enableDamping = false;
 controls.enableRotate = false;
 controls.enableZoom = false;

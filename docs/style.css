@@ -152,6 +152,10 @@
        .blackhole{
         height: 1300px;
        }
+       #blackhole canvas {
+  pointer-events: none;
+}
+       
        .two h1{
         font-size: 20px;
        }
