@@ -146,6 +146,7 @@ models.forEach((modelConfig) => {
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableZoom = false;
+  controls.enableRotate=false
   controls.autoRotate = true;
   controls.autoRotateSpeed = 1;
 
