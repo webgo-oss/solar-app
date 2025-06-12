@@ -152,10 +152,6 @@
        .blackhole{
         height: 1300px;
        }
-       #blackhole canvas {
-  pointer-events: none;
-}
-       
        .two h1{
         font-size: 20px;
        }
@@ -317,6 +313,10 @@
     }
 }
 @media(max-width:426px){
+    #blackhole canvas {
+  pointer-events: none;
+  touch-action: auto;
+}
     .everyone{
       flex-direction: column;
        } 
