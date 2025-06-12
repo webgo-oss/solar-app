@@ -1,11 +1,12 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module.js';
 import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js';
+import { MeshoptDecoder } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/libs/meshopt_decoder.module.js';
 
 const models = [
   {
     id: 'merquery',
-    path: './3dmodels/mercury.glb',
+    path: './3dmodels/mercury-v1.glb',
     scale: [1, 1, 1],
     position: [1, 1, 1],
     cameraZ: 250,
@@ -16,7 +17,7 @@ const models = [
   },
   {
     id: 'mars',
-    path: './3dmodels/mars.glb',
+    path: './3dmodels/mars-v1.glb',
     scale: [1, 1, 1],
     position: [0, 0, 0],
     cameraZ: 16,
@@ -27,7 +28,7 @@ const models = [
   },
   {
     id: 'Jupiter',
-    path: './3dmodels/jupiter.glb',
+    path: './3dmodels/jupiter-v1.glb',
     scale: [2.5, 2.5, 2.5],
     position: [0, 0, 0],
     cameraZ: 5,
@@ -38,7 +39,7 @@ const models = [
   },
   {
     id: 'saturn',
-    path: './3dmodels/saturn_planet.glb',
+    path: './3dmodels/saturn_planet-v1.glb',
     scale: [1.4, 1.4, 1.4],
     position: [0, 0, 0],
     rotation: [0.2, 0, 0.1],
@@ -50,7 +51,7 @@ const models = [
   },
   {
     id: 'venus',
-    path: './3dmodels/venus_v1.1.glb',
+    path: './3dmodels/venus_v11-v1.glb',
     scale: [2.2, 2.2, 2.2],
     position: [0, 0, 0],
     cameraZ: 5,
@@ -61,7 +62,7 @@ const models = [
   },
   {
     id: 'urans',
-    path: './3dmodels/realistic_uranus_4k.glb',
+    path: './3dmodels/realistic_uranus_4k-v1.glb',
     scale: [1, 1, 1],
     position: [0, 0, 0],
     cameraZ: 1500,
@@ -72,7 +73,7 @@ const models = [
   },
   {
     id: 'pluto',
-    path: './3dmodels/pluton.glb',
+    path: './3dmodels/pluton-v1.glb',
     scale: [1.5, 1.5, 1.5],
     position: [0, 0, 0],
     cameraZ: 5,
@@ -83,7 +84,7 @@ const models = [
   },
   {
     id: 'naptune',
-    path: './3dmodels/Neptune.glb',
+    path: './3dmodels/Neptune-v1.glb',
     scale: [1, 1, 1],
     position: [0, -6, 0],
     cameraZ: 8,
@@ -94,7 +95,7 @@ const models = [
   },
   {
     id: 'sun',
-    path: './3dmodels/starcelestial_objectsun.glb',
+    path: './3dmodels/starcelestial_objectsun-v1.glb',
     scale: [4, 4, 4],
     position: [0, 0, 0],
     cameraZ: 8,
@@ -121,6 +122,8 @@ models.forEach((modelConfig) => {
   container.appendChild(renderer.domElement);
 
   const loader = new GLTFLoader();
+  loader.setMeshoptDecoder(MeshoptDecoder); 
+
   loader.load(
     modelConfig.path,
     (gltf) => {
