@@ -3,6 +3,9 @@ import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 import { OrbitControls } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js';
 import { MeshoptDecoder } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/libs/meshopt_decoder.module.js';
 
+const isLowEndDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+let activeRenderer = null;
+
 const models = [
   {
     id: 'merquery',
@@ -10,10 +13,7 @@ const models = [
     scale: [1, 1, 1],
     position: [1, 1, 1],
     cameraZ: 250,
-    lights: {
-      ambient: [0xffffff, 0.5],
-      directional: [0xffffff, 3, [100, 100, 100]]
-    }
+    lights: { ambient: [0xffffff, 0.5], directional: [0xffffff, 3, [100, 100, 100]] }
   },
   {
     id: 'mars',
@@ -21,10 +21,7 @@ const models = [
     scale: [1, 1, 1],
     position: [0, 0, 0],
     cameraZ: 16,
-    lights: {
-      ambient: [0xffffff, 0.5],
-      directional: [0xffffff, 3, [100, 100, 100]]
-    }
+    lights: { ambient: [0xffffff, 0.5], directional: [0xffffff, 3, [100, 100, 100]] }
   },
   {
     id: 'Jupiter',
@@ -32,10 +29,7 @@ const models = [
     scale: [2.5, 2.5, 2.5],
     position: [0, 0, 0],
     cameraZ: 5,
-    lights: {
-      ambient: [0xffffff, 0.1],
-      directional: [0xffffff, 1, [100, 100, 100]]
-    }
+    lights: { ambient: [0xffffff, 0.1], directional: [0xffffff, 1, [100, 100, 100]] }
   },
   {
     id: 'saturn',
@@ -44,10 +38,7 @@ const models = [
     position: [0, 0, 0],
     rotation: [0.2, 0, 0.1],
     cameraZ: 5,
-    lights: {
-      ambient: [0xffffff, 0.1],
-      directional: [0xffffff, 1, [100, 100, 100]]
-    }
+    lights: { ambient: [0xffffff, 0.1], directional: [0xffffff, 1, [100, 100, 100]] }
   },
   {
     id: 'venus',
@@ -55,10 +46,7 @@ const models = [
     scale: [2.2, 2.2, 2.2],
     position: [0, 0, 0],
     cameraZ: 5,
-    lights: {
-      ambient: [0xffffff, 0.9],
-      directional: [0xffffff, 0.001, [500, 100, 100]]
-    }
+    lights: { ambient: [0xffffff, 0.9], directional: [0xffffff, 0.001, [500, 100, 100]] }
   },
   {
     id: 'urans',
@@ -66,10 +54,7 @@ const models = [
     scale: [1, 1, 1],
     position: [0, 0, 0],
     cameraZ: 1500,
-    lights: {
-      ambient: [0xffffff, 0.9],
-      directional: [0xffffff, 0.001, [500, 100, 100]]
-    }
+    lights: { ambient: [0xffffff, 0.9], directional: [0xffffff, 0.001, [500, 100, 100]] }
   },
   {
     id: 'pluto',
@@ -77,10 +62,7 @@ const models = [
     scale: [1.5, 1.5, 1.5],
     position: [0, 0, 0],
     cameraZ: 5,
-    lights: {
-      ambient: [0xffffff, 0.9],
-      directional: [0xffffff, 1, [100, 100, 100]]
-    }
+    lights: { ambient: [0xffffff, 0.9], directional: [0xffffff, 1, [100, 100, 100]] }
   },
   {
     id: 'naptune',
@@ -88,10 +70,7 @@ const models = [
     scale: [1, 1, 1],
     position: [0, -6, 0],
     cameraZ: 8,
-    lights: {
-      ambient: [0xffffff, 0.9],
-      directional: [0xffffff, 0.001, [500, 100, 100]]
-    }
+    lights: { ambient: [0xffffff, 0.9], directional: [0xffffff, 0.001, [500, 100, 100]] }
   },
   {
     id: 'sun',
@@ -99,14 +78,14 @@ const models = [
     scale: [4, 4, 4],
     position: [0, 0, 0],
     cameraZ: 8,
-    lights: {
-      ambient: [0xffffff, 5],
-      directional: [0xffffff, 2, [500, 100, 100]]
-    }
+    lights: { ambient: [0xffffff, 5], directional: [0xffffff, 2, [500, 100, 100]] }
   }
 ];
 
-const isLowEndDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const loader = new GLTFLoader();
+loader.setMeshoptDecoder(MeshoptDecoder);
+
+const createdScenes = {};
 
 models.forEach((modelConfig) => {
   const container = document.getElementById(modelConfig.id);
@@ -121,22 +100,6 @@ models.forEach((modelConfig) => {
   if (isLowEndDevice) renderer.setPixelRatio(0.8);
   container.appendChild(renderer.domElement);
 
-  const loader = new GLTFLoader();
-  loader.setMeshoptDecoder(MeshoptDecoder); 
-
-  loader.load(
-    modelConfig.path,
-    (gltf) => {
-      const model = gltf.scene;
-      model.scale.set(...modelConfig.scale);
-      model.position.set(...modelConfig.position);
-      if (modelConfig.rotation) model.rotation.set(...modelConfig.rotation);
-      scene.add(model);
-    },
-    undefined,
-    (error) => console.error('Error loading model:', error)
-  );
-
   const ambientLight = new THREE.AmbientLight(...modelConfig.lights.ambient);
   scene.add(ambientLight);
 
@@ -146,9 +109,26 @@ models.forEach((modelConfig) => {
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableZoom = false;
-  controls.enableRotate=false
+  controls.enableRotate = false;
   controls.autoRotate = true;
   controls.autoRotateSpeed = 1;
+
+  loader.load(
+    modelConfig.path,
+    (gltf) => {
+      const model = gltf.scene;
+      model.scale.set(...modelConfig.scale);
+      model.position.set(...modelConfig.position);
+      if (modelConfig.rotation) model.rotation.set(...modelConfig.rotation);
+      scene.add(model);
+        renderer.domElement.classList.add('loaded');
+    },
+    undefined,
+    (error) => console.error('Error loading model:', error)
+  );
+
+  createdScenes[modelConfig.id] = { renderer, scene, camera, controls, container };
+  renderer.domElement.style.display = 'none';
 
   const resizeObserver = new ResizeObserver(() => {
     const width = container.clientWidth;
@@ -158,18 +138,27 @@ models.forEach((modelConfig) => {
     camera.updateProjectionMatrix();
   });
   resizeObserver.observe(container);
-
   const observer = new IntersectionObserver(
     ([entry]) => {
-      if (entry.isIntersecting) animate();
-    },
-    { threshold: 0.1 }
-  );
-  observer.observe(container);
+      if (entry.isIntersecting) {
+        if (activeRenderer && activeRenderer !== renderer) {
+          activeRenderer.domElement.style.display = 'none';
+        }
+        
+        renderer.domElement.style.display = 'block';
+        activeRenderer = renderer;
 
-  function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-  }
+        function animate() {
+          if (activeRenderer !== renderer) return;
+          requestAnimationFrame(animate);
+          controls.update();
+          renderer.render(scene, camera);
+        }
+        animate();
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  observer.observe(container);
 });

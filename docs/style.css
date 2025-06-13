@@ -265,6 +265,51 @@
     font-family: 'font3';
     font-size: 20px;
 }
+/* .loading-planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  background: radial-gradient(circle at 30% 30%, #ffcc00, #ff9800);
+  border-radius: 50%;
+  box-shadow: inset -6px -6px 10px rgba(0, 0, 0, 0.3);
+  animation: spinPlanet 1.5s infinite linear, bounce 1s infinite ease-in-out;
+  z-index: 10;
+}
+.loading-planet .ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 20px;
+  margin-left: -50px;
+  margin-top: -10px;
+  border: 3px solid #c49b66;
+  border-radius: 50%;
+  transform: rotateX(60deg);
+  opacity: 0.4;
+}
+
+@keyframes spinPlanet {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { top: 48%; }
+  50% { top: 52%; }
+}    */
+ .common canvas {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.common canvas.loaded {
+  opacity: 1;
+}
+
 .everyone1{
     width: 50%;
     height: 60%;
