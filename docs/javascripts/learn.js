@@ -56,7 +56,7 @@ controls.enableDamping = true;
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
-    model.rotation.y+=0.001;
+  if(model)  model.rotation.y+=0.001;
 }
 animate();
 
